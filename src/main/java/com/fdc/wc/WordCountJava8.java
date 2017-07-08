@@ -38,7 +38,7 @@ public class WordCountJava8 {
         counts.foreach(count ->
                 logger.info(count._1() + "---" + count._2())
         );
-
+        sc.close();
     }
 
 
