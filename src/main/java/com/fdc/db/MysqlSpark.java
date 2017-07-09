@@ -1,15 +1,25 @@
 package com.fdc.db;
 
-import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.api.java.function.MapFunction;
-import org.apache.spark.sql.*;
-
 import java.io.Serializable;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Properties;
+
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.spark.api.java.function.ForeachPartitionFunction;
+import org.apache.spark.api.java.function.MapFunction;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Encoder;
+import org.apache.spark.sql.Encoders;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
+import org.apache.spark.sql.SparkSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.fdc.util.DBUtils;
 
 /**
  * mysql
@@ -19,30 +29,26 @@ import java.util.Map;
  **/
 public class MysqlSpark {
 
+    private final  static Logger logger = LoggerFactory.getLogger(MysqlSpark.class);
 
     public static void main(String[] args) {
 
-
-        SparkConf conf = new SparkConf().setAppName("Mysql Spark").setMaster("local");
-
-        JavaSparkContext jsc = new JavaSparkContext(conf);
-
-        SQLContext sqlContext = new SQLContext(jsc);
-
+        SparkSession spark = SparkSession
+                .builder()
+                .master("local")
+                .appName("Spark SQL Example")
+                .getOrCreate();
+        
         String url = "jdbc:mysql://192.168.1.6:3306/answ?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC";
-        Map<String, String> options = new HashMap<>();
-        options.put("driver", "com.mysql.cj.jdbc.Driver");
-        options.put("url", url);
-        options.put("dbtable", "customer");
-        options.put("user", "spark");
-        options.put("password", "123456");
-        options.put("fetchSize", "20");
-        Dataset<Row> rowDataset = sqlContext.read().format("jdbc").options(options).load();
-
-        rowDataset.show();
-
-
-        Encoder<Customer> customerEncoder = Encoders.kryo(Customer.class);
+        Dataset<Row> rowDataset = spark.read().format("jdbc")
+                .option("url", url)
+                .option("dbtable", "answ.customer")
+                .option("user", "spark")
+                .option("password", "123456")
+                .option("fetchSize", "20")
+                .load();
+        
+        Encoder<Customer> customerEncoder = Encoders.bean(Customer.class);
 
         Dataset<Customer> customerDataset = rowDataset.map(new MapFunction<Row, Customer>() {
             @Override
@@ -53,77 +59,54 @@ public class MysqlSpark {
                 String address = value.getAs("address");
                 String email = value.getAs("email");
                 String name = value.getAs("name");
-
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                String url = "jdbc:mysql://192.168.1.6:3306/answ?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC" ;
-                String username = "root" ;
-                String password = "root" ;
-                Connection conn = new DriverManager.getConnection(url, username, password);
-
-
-
+                
+                customer.setId(id * 100);
+                customer.setAddress(address + customer.getId());
+                customer.setEmail(email + customer.getId());
+                customer.setName(name + customer.getId());
+                
+                String sql = "select * from answ.customer where id=?";
+                
+                Connection conn = DBUtils.getConnect();
+                QueryRunner run = new QueryRunner();
+                List<Customer> list = run.query(conn, sql, 
+                        new BeanListHandler<Customer>(Customer.class),
+                        id);
+                
+                logger.info("----------------------------------------------");
+                for(Customer temp : list) {
+                    logger.info("Customer : " + temp.getId() + "---" + temp.getName());
+                }
+                logger.info("----------------------------------------------");
+                
                 return customer;
             }
         }, customerEncoder);
 
-
-
-
-//        SparkSession spark = SparkSession
-//                .builder()
-//                .appName("Spark SQL Example")
-//                .getOrCreate();
-//        Dataset<Row> dataset = spark.read().format("jdbc")
-//                .option("url", "jdbc:mysql://192.168.1.6:3306/answ?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC")
-//                .option("dbtable", "answ.customer")
-//                .option("user", "spark")
-//                .option("password", "123456")
-//                .option("fetchSize", "1")
-//                .load();
-
+        customerDataset.show();
+        
+        
+        
+        Properties connectionProperties = new Properties();
+        connectionProperties.put("user", "spark");
+        connectionProperties.put("password", "123456");
+        customerDataset.write().mode(SaveMode.Append).jdbc(url, "answ.customer", connectionProperties);
+        
+//        customerDataset.foreachPartition(new ForeachPartitionFunction<Customer>() {
+//            
+//            @Override
+//            public void call(Iterator<Customer> t) throws Exception {
+//                
+//                
+//                
+//                
+//            }
+//        });
+        
+        
 
     }
 
 
 
-}
-
-class Customer implements Serializable {
-
-    private Integer id;
-    private String address;
-    private String mail;
-    private String name;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
