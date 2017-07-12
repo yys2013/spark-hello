@@ -15,7 +15,7 @@ public class FjContractDtl implements Serializable {
 
     private long contractInfoId;
 
-    private Long oriContractInfoId;
+    private long oriContractInfoId;
 
     private Integer cycleFreq;
 
@@ -26,35 +26,35 @@ public class FjContractDtl implements Serializable {
 
     private Integer paymentcardCycle;
 
-    private Long itemCode;
+    private long itemCode;
 
     /**
      * external system contract ID
      */
-    private Long offerId;
+    private long offerId;
 
-    private Long measureId;
+    private long measureId;
 
-    private Long productOfferingId;
+    private long productOfferingId;
 
     /**
      * 对于承诺期的产品，由于只是承诺要消费，实际账单还没有出，也可能preinvouce出过了。出过了就等于billed price
      */
-    private Long contractPrice;
+    private long contractPrice;
 
     /**
      * Stand alone price
      */
-    private Long saPrice;
+    private long saPrice;
 
     /**
      * to be allocated amount
      */
-    private Long allocPrice;
+    private long allocPrice;
 
     private Date activationDate;
 
-    private Long allocationRate;
+    private long allocationRate;
 
     private Date commStartDate;
 
@@ -82,27 +82,27 @@ public class FjContractDtl implements Serializable {
 
     private Date createDate;
 
-    private Long createOpId;
+    private long createOpId;
 
-    private Long createOrgId;
+    private long createOrgId;
 
     /**
      * Tenant id
      */
-    private Long tenantId;
+    private long tenantId;
 
     /**
      * Fiscal period
      */
-    private Long fiscalPeriod;
+    private long fiscalPeriod;
 
     private String remarks;
 
-    private Long custId;
+    private long custId;
 
-    private Long acctId;
+    private long acctId;
 
-    private Long userId;
+    private long userId;
 
     private String phoneNo;
 
@@ -110,27 +110,27 @@ public class FjContractDtl implements Serializable {
 
     private int billedSts;
 
-    private Long notSplitAmount;
+    private long notSplitAmount;
 
     /**
      * 首月，合同内的价格
      */
-    private Long contractFAmount;
+    private long contractFAmount;
 
     /**
      * 合同内总价格
      */
-    private Long contractAmount;
+    private long contractAmount;
 
     /**
      * 分配总价格
      */
-    private Long allocAmount;
+    private long allocAmount;
 
     /**
      * 首月分配的价格
      */
-    private Long allocFAmount;
+    private long allocFAmount;
 
     /**
      * 县市编码
@@ -140,9 +140,9 @@ public class FjContractDtl implements Serializable {
     /**
      * Purchase Price 采购价（成本价）
      */
-    private Long purchasePrice;
+    private long purchasePrice;
 
-    private Long brandId;
+    private long brandId;
 
     private String period1;
 
@@ -158,7 +158,7 @@ public class FjContractDtl implements Serializable {
 
     private String period7;
 
-    private Long invoiceAmount;
+    private long invoiceAmount;
 
     public long getId() {
         return id;
@@ -176,11 +176,11 @@ public class FjContractDtl implements Serializable {
         this.contractInfoId = contractInfoId;
     }
 
-    public Long getOriContractInfoId() {
+    public long getOriContractInfoId() {
         return oriContractInfoId;
     }
 
-    public void setOriContractInfoId(Long oriContractInfoId) {
+    public void setOriContractInfoId(long oriContractInfoId) {
         this.oriContractInfoId = oriContractInfoId;
     }
 
@@ -208,59 +208,59 @@ public class FjContractDtl implements Serializable {
         this.paymentcardCycle = paymentcardCycle;
     }
 
-    public Long getItemCode() {
+    public long getItemCode() {
         return itemCode;
     }
 
-    public void setItemCode(Long itemCode) {
+    public void setItemCode(long itemCode) {
         this.itemCode = itemCode;
     }
 
-    public Long getOfferId() {
+    public long getOfferId() {
         return offerId;
     }
 
-    public void setOfferId(Long offerId) {
+    public void setOfferId(long offerId) {
         this.offerId = offerId;
     }
 
-    public Long getMeasureId() {
+    public long getMeasureId() {
         return measureId;
     }
 
-    public void setMeasureId(Long measureId) {
+    public void setMeasureId(long measureId) {
         this.measureId = measureId;
     }
 
-    public Long getProductOfferingId() {
+    public long getProductOfferingId() {
         return productOfferingId;
     }
 
-    public void setProductOfferingId(Long productOfferingId) {
+    public void setProductOfferingId(long productOfferingId) {
         this.productOfferingId = productOfferingId;
     }
 
-    public Long getContractPrice() {
+    public long getContractPrice() {
         return contractPrice;
     }
 
-    public void setContractPrice(Long contractPrice) {
+    public void setContractPrice(long contractPrice) {
         this.contractPrice = contractPrice;
     }
 
-    public Long getSaPrice() {
+    public long getSaPrice() {
         return saPrice;
     }
 
-    public void setSaPrice(Long saPrice) {
+    public void setSaPrice(long saPrice) {
         this.saPrice = saPrice;
     }
 
-    public Long getAllocPrice() {
+    public long getAllocPrice() {
         return allocPrice;
     }
 
-    public void setAllocPrice(Long allocPrice) {
+    public void setAllocPrice(long allocPrice) {
         this.allocPrice = allocPrice;
     }
 
@@ -272,11 +272,11 @@ public class FjContractDtl implements Serializable {
         this.activationDate = activationDate;
     }
 
-    public Long getAllocationRate() {
+    public long getAllocationRate() {
         return allocationRate;
     }
 
-    public void setAllocationRate(Long allocationRate) {
+    public void setAllocationRate(long allocationRate) {
         this.allocationRate = allocationRate;
     }
 
@@ -360,35 +360,35 @@ public class FjContractDtl implements Serializable {
         this.createDate = createDate;
     }
 
-    public Long getCreateOpId() {
+    public long getCreateOpId() {
         return createOpId;
     }
 
-    public void setCreateOpId(Long createOpId) {
+    public void setCreateOpId(long createOpId) {
         this.createOpId = createOpId;
     }
 
-    public Long getCreateOrgId() {
+    public long getCreateOrgId() {
         return createOrgId;
     }
 
-    public void setCreateOrgId(Long createOrgId) {
+    public void setCreateOrgId(long createOrgId) {
         this.createOrgId = createOrgId;
     }
 
-    public Long getTenantId() {
+    public long getTenantId() {
         return tenantId;
     }
 
-    public void setTenantId(Long tenantId) {
+    public void setTenantId(long tenantId) {
         this.tenantId = tenantId;
     }
 
-    public Long getFiscalPeriod() {
+    public long getFiscalPeriod() {
         return fiscalPeriod;
     }
 
-    public void setFiscalPeriod(Long fiscalPeriod) {
+    public void setFiscalPeriod(long fiscalPeriod) {
         this.fiscalPeriod = fiscalPeriod;
     }
 
@@ -400,27 +400,27 @@ public class FjContractDtl implements Serializable {
         this.remarks = remarks;
     }
 
-    public Long getCustId() {
+    public long getCustId() {
         return custId;
     }
 
-    public void setCustId(Long custId) {
+    public void setCustId(long custId) {
         this.custId = custId;
     }
 
-    public Long getAcctId() {
+    public long getAcctId() {
         return acctId;
     }
 
-    public void setAcctId(Long acctId) {
+    public void setAcctId(long acctId) {
         this.acctId = acctId;
     }
 
-    public Long getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
@@ -448,43 +448,43 @@ public class FjContractDtl implements Serializable {
         this.billedSts = billedSts;
     }
 
-    public Long getNotSplitAmount() {
+    public long getNotSplitAmount() {
         return notSplitAmount;
     }
 
-    public void setNotSplitAmount(Long notSplitAmount) {
+    public void setNotSplitAmount(long notSplitAmount) {
         this.notSplitAmount = notSplitAmount;
     }
 
-    public Long getContractFAmount() {
+    public long getContractFAmount() {
         return contractFAmount;
     }
 
-    public void setContractFAmount(Long contractFAmount) {
+    public void setContractFAmount(long contractFAmount) {
         this.contractFAmount = contractFAmount;
     }
 
-    public Long getContractAmount() {
+    public long getContractAmount() {
         return contractAmount;
     }
 
-    public void setContractAmount(Long contractAmount) {
+    public void setContractAmount(long contractAmount) {
         this.contractAmount = contractAmount;
     }
 
-    public Long getAllocAmount() {
+    public long getAllocAmount() {
         return allocAmount;
     }
 
-    public void setAllocAmount(Long allocAmount) {
+    public void setAllocAmount(long allocAmount) {
         this.allocAmount = allocAmount;
     }
 
-    public Long getAllocFAmount() {
+    public long getAllocFAmount() {
         return allocFAmount;
     }
 
-    public void setAllocFAmount(Long allocFAmount) {
+    public void setAllocFAmount(long allocFAmount) {
         this.allocFAmount = allocFAmount;
     }
 
@@ -496,19 +496,19 @@ public class FjContractDtl implements Serializable {
         this.countryCode = countryCode;
     }
 
-    public Long getPurchasePrice() {
+    public long getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(Long purchasePrice) {
+    public void setPurchasePrice(long purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
-    public Long getBrandId() {
+    public long getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(Long brandId) {
+    public void setBrandId(long brandId) {
         this.brandId = brandId;
     }
 
@@ -568,11 +568,11 @@ public class FjContractDtl implements Serializable {
         this.period7 = period7;
     }
 
-    public Long getInvoiceAmount() {
+    public long getInvoiceAmount() {
         return invoiceAmount;
     }
 
-    public void setInvoiceAmount(Long invoiceAmount) {
+    public void setInvoiceAmount(long invoiceAmount) {
         this.invoiceAmount = invoiceAmount;
     }
 

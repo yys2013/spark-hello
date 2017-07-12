@@ -13,19 +13,19 @@ public class FjContractAlloc implements Serializable {
 
     private long id;
 
-    private Long contractInfoId;
+    private long contractInfoId;
 
     private long contractDtlId;
 
-    private Integer chargeType;
+    private int chargeType;
 
-    private Long itemCode;
+    private long itemCode;
 
-    private Long offerId;
+    private long offerId;
 
-    private Long productOfferingId;
+    private long productOfferingId;
 
-    private Long measureId;
+    private long measureId;
 
     private Date revBeginCycleDate;
 
@@ -37,13 +37,13 @@ public class FjContractAlloc implements Serializable {
 
     private Date valueDate;
 
-    private Long allocRev;
+    private long allocRev;
 
-    private Long fiscalPeriod;
+    private long fiscalPeriod;
 
-    private Long contractFiscalPeriod;
+    private long contractFiscalPeriod;
 
-    private Integer dealSts;
+    private int dealSts;
 
     private String dealMsg;
 
@@ -52,15 +52,15 @@ public class FjContractAlloc implements Serializable {
     /**
      * Tenant id
      */
-    private Long tenantId;
+    private long tenantId;
 
     private String remarks;
 
-    private Long custId;
+    private long custId;
 
-    private Long acctId;
+    private long acctId;
 
-    private Long userId;
+    private long userId;
 
     private String phoneNo;
 
@@ -74,7 +74,7 @@ public class FjContractAlloc implements Serializable {
     /**
      * Purchase Price 采购价（成本价）
      */
-    private Long purchasePrice;
+    private long purchasePrice;
 
     private String strAllocRev;
 
@@ -86,11 +86,11 @@ public class FjContractAlloc implements Serializable {
         this.id = id;
     }
 
-    public Long getContractInfoId() {
+    public long getContractInfoId() {
         return contractInfoId;
     }
 
-    public void setContractInfoId(Long contractInfoId) {
+    public void setContractInfoId(long contractInfoId) {
         this.contractInfoId = contractInfoId;
     }
 
@@ -102,43 +102,43 @@ public class FjContractAlloc implements Serializable {
         this.contractDtlId = contractDtlId;
     }
 
-    public Integer getChargeType() {
+    public int getChargeType() {
         return chargeType;
     }
 
-    public void setChargeType(Integer chargeType) {
+    public void setChargeType(int chargeType) {
         this.chargeType = chargeType;
     }
 
-    public Long getItemCode() {
+    public long getItemCode() {
         return itemCode;
     }
 
-    public void setItemCode(Long itemCode) {
+    public void setItemCode(long itemCode) {
         this.itemCode = itemCode;
     }
 
-    public Long getOfferId() {
+    public long getOfferId() {
         return offerId;
     }
 
-    public void setOfferId(Long offerId) {
+    public void setOfferId(long offerId) {
         this.offerId = offerId;
     }
 
-    public Long getProductOfferingId() {
+    public long getProductOfferingId() {
         return productOfferingId;
     }
 
-    public void setProductOfferingId(Long productOfferingId) {
+    public void setProductOfferingId(long productOfferingId) {
         this.productOfferingId = productOfferingId;
     }
 
-    public Long getMeasureId() {
+    public long getMeasureId() {
         return measureId;
     }
 
-    public void setMeasureId(Long measureId) {
+    public void setMeasureId(long measureId) {
         this.measureId = measureId;
     }
 
@@ -182,35 +182,35 @@ public class FjContractAlloc implements Serializable {
         this.valueDate = valueDate;
     }
 
-    public Long getAllocRev() {
+    public long getAllocRev() {
         return allocRev;
     }
 
-    public void setAllocRev(Long allocRev) {
+    public void setAllocRev(long allocRev) {
         this.allocRev = allocRev;
     }
 
-    public Long getFiscalPeriod() {
+    public long getFiscalPeriod() {
         return fiscalPeriod;
     }
 
-    public void setFiscalPeriod(Long fiscalPeriod) {
+    public void setFiscalPeriod(long fiscalPeriod) {
         this.fiscalPeriod = fiscalPeriod;
     }
 
-    public Long getContractFiscalPeriod() {
+    public long getContractFiscalPeriod() {
         return contractFiscalPeriod;
     }
 
-    public void setContractFiscalPeriod(Long contractFiscalPeriod) {
+    public void setContractFiscalPeriod(long contractFiscalPeriod) {
         this.contractFiscalPeriod = contractFiscalPeriod;
     }
 
-    public Integer getDealSts() {
+    public int getDealSts() {
         return dealSts;
     }
 
-    public void setDealSts(Integer dealSts) {
+    public void setDealSts(int dealSts) {
         this.dealSts = dealSts;
     }
 
@@ -230,11 +230,11 @@ public class FjContractAlloc implements Serializable {
         this.dealDate = dealDate;
     }
 
-    public Long getTenantId() {
+    public long getTenantId() {
         return tenantId;
     }
 
-    public void setTenantId(Long tenantId) {
+    public void setTenantId(long tenantId) {
         this.tenantId = tenantId;
     }
 
@@ -246,27 +246,27 @@ public class FjContractAlloc implements Serializable {
         this.remarks = remarks;
     }
 
-    public Long getCustId() {
+    public long getCustId() {
         return custId;
     }
 
-    public void setCustId(Long custId) {
+    public void setCustId(long custId) {
         this.custId = custId;
     }
 
-    public Long getAcctId() {
+    public long getAcctId() {
         return acctId;
     }
 
-    public void setAcctId(Long acctId) {
+    public void setAcctId(long acctId) {
         this.acctId = acctId;
     }
 
-    public Long getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
@@ -294,11 +294,11 @@ public class FjContractAlloc implements Serializable {
         this.countryCode = countryCode;
     }
 
-    public Long getPurchasePrice() {
+    public long getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(Long purchasePrice) {
+    public void setPurchasePrice(long purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
