@@ -1,4 +1,4 @@
-package com.fdc.db;
+package com.fdc.db.mysql;
 
 import java.sql.Connection;
 import java.util.List;

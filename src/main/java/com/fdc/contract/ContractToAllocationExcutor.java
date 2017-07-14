@@ -42,13 +42,13 @@ public class ContractToAllocationExcutor {
 //                .master("local")
 //                .getOrCreate();
         
-        System.setProperty("user.timezone", "GMT");
+        //System.setProperty("user.timezone", "GMT");
         
         
         SparkSession sparkSession = 
                 SparkSession.builder()
                 .appName("ContractToAllocation")
-                .master("spark://server01:7077")
+                //.master("spark://server01:7077")
                 .getOrCreate();
         
         
