@@ -10,7 +10,7 @@ import com.mongodb.spark.rdd.api.java.JavaMongoRDD;
 public class MongoSparkDemo {
 
     public static void main(String[] args) {
-        SparkSession spark = SparkSession.builder()
+        SparkSession spark = SparkSession.builder() 
                 .master("local")
                 .appName("MongoSparkConnectorIntro")
                 .config("spark.mongodb.input.uri", "mongodb://10.19.18.75/fj.user")

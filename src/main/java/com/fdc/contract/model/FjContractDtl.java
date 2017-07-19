@@ -576,4 +576,38 @@ public class FjContractDtl implements Serializable {
         this.invoiceAmount = invoiceAmount;
     }
 
+    @Override
+    public String toString() {
+        return "FjContractDtl [id=" + id + ", contractInfoId=" + contractInfoId
+                + ", oriContractInfoId=" + oriContractInfoId + ", cycleFreq="
+                + cycleFreq + ", chargeType=" + chargeType
+                + ", paymentcardCycle=" + paymentcardCycle + ", itemCode="
+                + itemCode + ", offerId=" + offerId + ", measureId="
+                + measureId + ", productOfferingId=" + productOfferingId
+                + ", contractPrice=" + contractPrice + ", saPrice=" + saPrice
+                + ", allocPrice=" + allocPrice + ", activationDate="
+                + activationDate + ", allocationRate=" + allocationRate
+                + ", commStartDate=" + commStartDate + ", commEndDate="
+                + commEndDate + ", serviceStartDate=" + serviceStartDate
+                + ", serviceEndDate=" + serviceEndDate + ", dealSts=" + dealSts
+                + ", contractItemType=" + contractItemType + ", dealMsg="
+                + dealMsg + ", valueDate=" + valueDate + ", dealDate="
+                + dealDate + ", createDate=" + createDate + ", createOpId="
+                + createOpId + ", createOrgId=" + createOrgId + ", tenantId="
+                + tenantId + ", fiscalPeriod=" + fiscalPeriod + ", remarks="
+                + remarks + ", custId=" + custId + ", acctId=" + acctId
+                + ", userId=" + userId + ", phoneNo=" + phoneNo
+                + ", regionCode=" + regionCode + ", billedSts=" + billedSts
+                + ", notSplitAmount=" + notSplitAmount + ", contractFAmount="
+                + contractFAmount + ", contractAmount=" + contractAmount
+                + ", allocAmount=" + allocAmount + ", allocFAmount="
+                + allocFAmount + ", countryCode=" + countryCode
+                + ", purchasePrice=" + purchasePrice + ", brandId=" + brandId
+                + ", period1=" + period1 + ", period2=" + period2
+                + ", period3=" + period3 + ", period4=" + period4
+                + ", period5=" + period5 + ", period6=" + period6
+                + ", period7=" + period7 + ", invoiceAmount=" + invoiceAmount
+                + "]";
+    }
+
 }
